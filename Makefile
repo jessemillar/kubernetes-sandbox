@@ -1,6 +1,12 @@
 SHELL := /bin/bash
 
-all: build apply
+all: create-cluster build apply
+
+create-cluster:
+	kind create cluster || true
+
+delete-cluster:
+	kind delete cluster || true
 
 build:
 	docker build -t jessemillar/sandbox:latest .
