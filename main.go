@@ -28,7 +28,7 @@ func main() {
 		if err != nil {
 			fmt.Printf("Error getting configMap %v\n", err.Error())
 		} else {
-			fmt.Printf("ConfigMap: %s\n", configMap)
+			fmt.Printf("ConfigMap: %s\n", configMap.Data["player_initial_lives"])
 		}
 
 		time.Sleep(2 * time.Second)
